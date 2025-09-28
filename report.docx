@@ -1,0 +1,161 @@
+📄 Documentation: Cricket Score Predictor Pro
+1. Introduction
+
+The Cricket Score Predictor Pro is an interactive Streamlit web application designed to provide advanced cricket analytics, real-time score prediction, player statistics, and match dashboards.
+
+It uses:
+
+Python (Streamlit, Pandas, NumPy) for frontend and data processing.
+
+Plotly for interactive visualizations.
+
+Scikit-learn’s RandomForestRegressor for machine learning–based score prediction.
+
+The tool is suitable for:
+
+Cricket fans and analysts who want insights.
+
+Students learning sports analytics.
+
+Researchers working on predictive modeling with sports data.
+
+2. Key Features
+
+🎯 Live Prediction
+
+Real-time input of overs, runs, and wickets.
+
+AI-driven prediction of final score with confidence levels.
+
+Visual gauges for current vs. predicted score.
+
+👥 Player Analytics
+
+Individual player statistics (runs, strike rate, boundaries).
+
+Performance progression chart over overs.
+
+📈 Match Dashboard
+
+Team-wise total runs.
+
+Run rate progression across overs.
+
+Bar and line charts for match comparison.
+
+ℹ️ Data Overview
+
+Dataset preview.
+
+Quick statistics (total runs, average run rate, wickets, boundaries).
+
+🖼 Enhanced UI/UX
+
+Custom CSS for a polished design.
+
+Hero section with gradient background.
+
+Metric cards for quick insights.
+
+Tab-based navigation.
+
+3. Code Structure
+app.py
+│
+├── Page Config & CSS   → Streamlit setup + custom styling
+├── Helper Functions    → Data generation & dataset type detection
+├── ML Predictor Class  → CricketPredictor with training & prediction
+├── UI Sections
+│   ├── Hero Section
+│   ├── Sidebar (controls, dataset upload)
+│   ├── Tabs
+│   │   ├── Live Prediction
+│   │   ├── Player Analytics
+│   │   ├── Match Dashboard
+│   │   └── Data Overview
+│   └── Footer
+
+4. Machine Learning Model
+
+Algorithm: RandomForestRegressor (100 estimators).
+
+Training Data: Ball-by-ball cricket dataset.
+
+Features Used:
+
+Over number
+
+Cumulative runs
+
+Cumulative wickets
+
+Run rate
+
+Target: Final cumulative runs.
+
+Fallback Mechanism:
+
+If dataset lacks required columns, a statistical formula (run rate extrapolation) is used.
+
+5. How to Run
+
+Install dependencies:
+
+pip install streamlit pandas numpy plotly scikit-learn
+
+
+Save the code as app.py.
+
+Place your dataset (.csv) in the same folder.
+
+Run the app:
+
+streamlit run app.py
+
+
+Open the local server link in your browser.
+
+6. Input Data Requirements
+
+Ball-by-ball dataset (recommended for prediction):
+Required columns → over, runs, team, wickets.
+
+Player stats dataset:
+Columns like player, runs, batsman, etc.
+
+Match results dataset:
+Columns like winner, result, margin.
+
+7. Example Workflow
+
+Upload a ball-by-ball dataset (CSV).
+
+Select match format (T20 or ODI).
+
+Choose team and player from sidebar filters.
+
+Navigate between tabs for:
+
+Live Prediction → Input overs, runs, wickets → See predicted final score.
+
+Player Analytics → Select player → See strike rate, runs, boundaries.
+
+Match Dashboard → Compare team scores and run rate progression.
+
+Data Overview → Explore dataset statistics.
+
+8. Possible Extensions
+
+Add bowling analytics (economy, wickets, dot balls).
+
+Integrate real-time APIs for live cricket data.
+
+Support multiple ML models (XGBoost, LSTM for sequence prediction).
+
+Build mobile-friendly interface with Streamlit components.
+
+Export results as PDF or Excel reports.
+
+9. Conclusion
+
+The Cricket Score Predictor Pro combines machine learning, interactive visualization, and cricket-specific analytics into one intuitive dashboard. It is extensible, customizable, and can serve as both a learning tool and a practical application in sports analytics.
